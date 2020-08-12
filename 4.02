@@ -1,0 +1,102 @@
+#program start
+
+#input section
+	#set turtle name to kay
+	#se kay speed to 100
+	#set second turtle name to momo
+	#set momo shape to turtle
+	#set momo color to green
+	#turn left 180 degrees
+	#pen up 
+	#call road
+
+#processing section
+	#define the function raod with r as its parameter
+	#set variable side equal to 20
+  #set variable angle equal to 90
+	#set r color to light blue 
+	#pen down
+	#hide turtle 
+  #set up count as the counter variable in the for loop and repeat the two following steps 12 times
+	#r forward for (side + count * 15)
+	#turn left at (angle) degrees 
+	#while true prompt user
+	#set variable move equal to user input
+  #if move equal to "F" move momo forward 8 units and continue prompting user 
+	#if move equal to "L" turn momo 90 degrees to the left and continue prompting user 
+	#if move equal to "R" turn momo 90 degrees to the right and continue prompting user 
+	#if move equal to "B" move momo backward 8 units and continue prompting user 
+	#if move equal to "D" stop prompting user  
+
+#output section
+	#display "Try To Get Out Of The Maze!"
+	#display "~ Menue Of Turtle Moves ~"
+	#display "~ F: Move Forward ~"
+	#display "~ L: Turn Left ~"
+	#display "~ R: Turn Right ~"
+	#display "~D: When you have reached the end of the maze~"
+	#display green turtle shape in "home" position  
+	#display a square spiral looking shape 
+	
+#eop
+
+def road(r):
+	
+	side = 20
+    angle = 90
+	r.color("light blue")
+	r.pendown()
+	r.hideturtle()
+	
+    for count in range(12):
+		r.forward(side + count * 15)
+		r.left(angle)
+		
+		
+		
+import math
+import turtle
+
+def main():
+
+	kay = turtle.Turtle()
+	kay.speed(100)
+	momo = turtle.Turtle()
+	momo.shape("turtle")
+	momo.color("green")
+	momo.left(180)
+	momo.penup()
+	
+	road(kay)
+	
+	print("Try To Get Out Of The Maze!")
+	print("~ Menue Of Turtle Moves ~")
+	print("~ F: Move Forward ~")
+	print("~ L: Turn Left ~")
+	print("~ R: Turn Right ~")
+	print("~ D: When you have reached the end of the maze ~")
+		
+	while True:
+	
+    	move = input()
+   	
+        if(move == "F"):
+			momo.forward(8)
+			continue
+			
+		if(move == "L"):
+			momo.left(90)
+			continue
+			
+		if(move == "R"):
+			momo.right(90)
+			continue
+			
+		if(move == "B"):
+			momo.backward(8)
+        	continue
+		
+		if(move == "D"):
+			break
+    
+main()
